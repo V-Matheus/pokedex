@@ -2,11 +2,27 @@
   font-family: 'Roboto', sans-serif;
 }
 
-.contant {
+.content {
   padding: 1rem;
-
 }
 
 .contant h1 {
   margin: 0;
+}
+
+ol.pokemons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ol.pokemons li{
+  margin: .5rem;
+  padding: 2rem 1rem;
+  background-color: #14A06F;
+  color: #fff;
+  border-radius: 1rem;
+  height: 100px;
 }
