@@ -1,5 +1,3 @@
-console.log('ok');
-
 const offset = 0;
 const limit = 10;
 
@@ -25,13 +23,12 @@ function convertPokemonToHtml(pokemon) {
 
 const pokemonList = document.getElementById('pokemonList');
 
+pokeApi.getPokemons().then((pokemons) => {
+  const listaItems = [];
+  for (let i = 0; i < pokemons.length; i++) {
+    const pokemon = pokemons[i];
+    listaItems.push(convertPokemonToHtml(pokemon));
+  }
 
-fetch(url)
-  .then((response) => response.json())
-  .then((json) => json.results)
-  .then((pokemons) => {
-    for (let i = 0; i < pokemons.length; i++) {
-      const pokemon = pokemons[i];
-      pokemonList.innerHTML += convertPokemonToHtml(pokemon);
-    }
-  });
+  console.log(listaItems);
+});
